@@ -1,0 +1,29 @@
+{
+  "name": "express-template",
+  "version": "1.0.0",
+  "description": "Lean Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon server.js",
+    "migrate": "sequelize db:migrate",
+    "db:seed" : "sequelize db:seed:all",
+    "migrate:fresh" : "sequelize db:migrate:undo:all && sequelize db:migrate",
+    "migrate:fresh --seed" : "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all"
+  },
+  "author": "Aryyy",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "fastest-validator": "^1.18.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.10.3",
+    "nodemon": "^3.1.4",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2"
+  }
+}
