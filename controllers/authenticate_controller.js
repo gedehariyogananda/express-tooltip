@@ -6,6 +6,8 @@ const bcrypt = require('bcryptjs');
 // --------- JWT SETUP AUTHENTICATE --------------- //
 
 function register(req, res){
+    
+    // findOne harus ada where nya kalau findByPk gausah //
     models.User.findOne({where : {email: req.body.email}}).then(result => {
         if(result){
             return res.status(400).json({
@@ -82,7 +84,8 @@ function login(req, res){
         });
     }
 
-    models.User.findOne({email: req.body.email}).then(user => {
+    // findOne harus ada where nya kalau findByPk gausah //
+    models.User.findOne({ where : {email: req.body.email}}).then(user => { 
         if(!user){
             return res.status(404).json({
                 success: false,
